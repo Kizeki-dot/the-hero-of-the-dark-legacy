@@ -177,6 +177,20 @@ function chapterDisplayTitle(chapter) {
   return chapter.title || "";
 }
 
+function renderComingSoonChapter(chapter) {
+  const message = getLanguage() === "my"
+    ? "မကြာမီလာမည်။"
+    : "Coming soon.";
+
+  const title = chapterReaderTitle(chapter);
+
+  chapterContainer.innerHTML = `
+    <p class="chapter-label">${escapeHtml(t("chapter").toUpperCase())} ${formatChapterNumber(chapter.number)}</p>
+    ${title ? `<h2>${escapeHtml(title)}</h2>` : ""}
+    <div class="coming-soon-message">${escapeHtml(message)}</div>
+  `;
+}
+
 async function loadChapter(index, scroll = true) {
   if (!chapters[index]) return;
   resetAudioForChapter();
@@ -185,6 +199,22 @@ async function loadChapter(index, scroll = true) {
   const chapter = chapters[index];
   chapterSelect.value = String(index);
   const file = chapterFileForLanguage(chapter);
+  if (chapter.comingSoon && getLanguage() === "my") {
+  renderComingSoonChapter(chapter);
+  loading.hidden = true;
+  errorBox.hidden = true;
+  footer.hidden = false;
+
+  prevChapter.disabled = index === 0;
+  nextChapter.disabled = index === chapters.length - 1;
+  prevChapterBottom.disabled = index === 0;
+  nextChapterBottom.disabled = index === chapters.length - 1;
+
+  updateUrl();
+  hideMusicNotice();
+  window.scrollTo({ top: 0, behavior: "auto" });
+  return;
+}
   const displayTitle = chapterReaderTitle(chapter);
   chapterContainer.innerHTML = `<p class="chapter-label">${escapeHtml(t("chapter").toUpperCase())} ${formatChapterNumber(chapter.number)}</p><h2>${escapeHtml(displayTitle)}</h2><div class="chapter-loading">${escapeHtml(t("loadingChapter"))}</div>`;
 

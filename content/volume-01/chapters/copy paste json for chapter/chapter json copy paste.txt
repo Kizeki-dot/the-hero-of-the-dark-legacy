@@ -1,0 +1,9 @@
+    ,{
+      "number": ,
+      "title": "",
+      "titleMy": "",
+      "readerTitle": "",
+      "readerTitleMy": "",
+      "comingSoon": true,
+      "file": "./chapters/"
+    }

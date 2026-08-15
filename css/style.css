@@ -222,3 +222,17 @@ code{font-size:.85em;color:var(--accent)}
   display: block;
   border-radius: inherit;
 }
+
+.coming-soon-message{
+  margin:0;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--surface);
+  color:var(--muted);
+  font-size:1.08rem;
+  line-height:1.8;
+  min-height:66px;
+  display:flex;
+  align-items:center;
+}

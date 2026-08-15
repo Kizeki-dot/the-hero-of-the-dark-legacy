@@ -22,16 +22,24 @@
 
     {
       "number": 2,
-      "title": "The Journey",
-      "titleMy": "ကြားဖြတ် အပိုင်းငယ် အခန်း(၁)",
-      "file": "chapters/chapter-002.txt"
+      "title": "",
+      "titleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ",
+      "readerTitle": "",
+      "readerTitleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ",
+      "comingSoon": true,
+      "file": "./chapters/chapter-002.txt"
     },
 
     {
-      "number": 3,
-      "title": "The Encounter",
+      "number": 2.5,
+      "title": "",
       "titleMy": " ",
-      "file": "chapters/chapter-003.txt"
+      "comingSoon": true,
+      "file": "./chapters/chapter-02.5.txt"
     }
+       
+
+
+
   ]
 }
