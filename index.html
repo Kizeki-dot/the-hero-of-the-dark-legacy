@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>My Novel</title>
+  <link rel="stylesheet" href="css/style.css">
+
+<style id="mobile-alignment-fix">
+@media (max-width: 600px) {
+  .book-cover, .cover, .book, .hero img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .read-volume, .read-now {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">HERO OF THE DARK LEGACY</a>
+    <div class="header-actions">
+      <nav id="nav">
+        <a href="#volumes" data-i18n="volumes">Volumes</a>
+        <a href="#about" data-i18n="about">About</a>
+      </nav>
+      <button class="language-btn" id="languageBtn" type="button">မြန်မာ</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" data-i18n-aria="openMenu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="book-cover">
+        <img src="./assests/1.png" alt="My Novel book cover">
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="aNovel">A NOVEL</p>
+        <h1>Hero of the Dark Legacy</h1>
+        <p class="description" data-i18n="description">A personal story written for friends, with optional music for selected scenes.</p>
+        <a class="primary-btn" href="#volumes" data-i18n="readNow">Read Now</a>
+      </div>
+    </section>
+
+    <section id="volumes" class="section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="story">THE STORY</p>
+        <h2 data-i18n="volumes">Volumes</h2>
+      </div>
+
+      <article class="volume-card">
+        <div class="mini-cover">
+            <img src="./assests/volume1.png" alt="Volume 01 cover">
+        </div>
+        <div class="volume-info">
+          <span class="volume-number" data-i18n="volume">Volume 01</span>
+          <h3 data-i18n="volumeOne">Volume One</h3>
+          <p data-i18n="chapterLoaded">Each chapter is loaded separately for a cleaner reading experience.</p>
+          <a class="secondary-btn" href="chapters/volume-01.html" data-i18n="readVolume">Read Volume 01</a>
+        </div>
+      </article>
+
+      <article class="volume-card coming-soon">
+        <div class="mini-cover">VOLUME<br>02</div>
+        <div class="volume-info">
+          <span class="volume-number" data-i18n="volumeTwo">Volume 02</span>
+          <h3 data-i18n="comingLater">Coming Later</h3>
+          <p data-i18n="nextPart">A space ready for the next part of the story.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="about" class="section about">
+      <p class="eyebrow" data-i18n="note">NOTE</p>
+      <h2 data-i18n="extra">A little extra</h2>
+      <p data-i18n="aboutText">Some scenes may include optional background music. It is designed to add atmosphere, not replace the story.</p>
+    </section>
+  </main>
+
+  <footer data-i18n="footer">Made as a personal reading experience.</footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

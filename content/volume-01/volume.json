@@ -1,0 +1,37 @@
+{
+  "title": "Hero of The Dark Legacy",
+  "subtitle": "Volume One - The beginning",
+  "chapters": [
+    {
+      "number": 1,
+      "title": "Hero Era",
+      "titleMy": "သူရဲကောင်းခေတ်",
+      "readerTitle": "The Hero Era",
+      "readerTitleMy": "သူရဲကောင်းခေတ်",
+      "file": "chapters/chapter-001.txt"
+    },
+
+    {
+      "number": 1.5,
+      "title": "Interlude",
+      "titleMy": "ကြားဖြတ် အပိုင်းငယ် အခန်း(၁)",
+      "readerTitle": "Interlude",
+      "readerTitleMy": "ထာဝရမှော်တံတိုင်း၏ ဒဏ္ဍာရီ နှင့် ဂန္တဝင်သူရဲကောင်း ခုနှစ်ဦး",
+      "file": "chapters/interlude-001.txt"
+    },
+
+    {
+      "number": 2,
+      "title": "The Journey",
+      "titleMy": "ကြားဖြတ် အပိုင်းငယ် အခန်း(၁)",
+      "file": "chapters/chapter-002.txt"
+    },
+
+    {
+      "number": 3,
+      "title": "The Encounter",
+      "titleMy": " ",
+      "file": "chapters/chapter-003.txt"
+    }
+  ]
+}

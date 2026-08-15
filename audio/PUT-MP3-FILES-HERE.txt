@@ -1,0 +1,5 @@
+Audio is now organized by volume and chapter.
+
+Example:
+audio/volume-01/chapter-001/scene-01.mp3
+audio/volume-01/chapter-002/scene-01.mp3
