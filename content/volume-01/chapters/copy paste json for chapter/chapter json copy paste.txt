@@ -7,3 +7,11 @@
       "comingSoon": true,
       "file": "./chapters/"
     }
+
+
+	
+[[music: scene-01.mp3 | volume=0.50 | title=Morning Journey]]
+
+The wind moved through the trees as he continued walking.
+
+[[/music]]

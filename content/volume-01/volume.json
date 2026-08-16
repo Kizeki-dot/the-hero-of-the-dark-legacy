@@ -35,13 +35,42 @@
       "title": "",
       "titleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ (အပိုင်း ၂)",
       "readerTitle": "",
-      "readerTitleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ - အခန်း ၂(အဆက် ၁)",
+      "readerTitleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ (အပိုင်း ၂)",
       "comingSoon": false,
       "file": "./chapters/chapter-02.5.txt"
-    }
+    },
+    
+    {
+      "number": "2",
+      "title": "",
+      "titleMy": "အပိုင်းငယ် ကြောက်ရွံ့နေသော သူရဲကောင်း",
+      "readerTitle": "",
+      "readerTitleMy": "ကြောက်ရွံ့နေသော သူရဲကောင်း",
+      "comingSoon": false,
+      "file": "./chapters/chapter-02.6.txt"
+    },
        
+    {
+      "number": "2",
+      "title": "",
+      "titleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ (အပိုင်း ၃)",
+      "readerTitle": "",
+      "readerTitleMy": "မိုးကြိုးသံနောက်ကွယ်မှ ကံကြမ္မာ (အပိုင်း ၃)",
+      "comingSoon": false,
+      "file": "./chapters/chapter-02.7.txt"
+    },
 
 
+    {
+      "number": "3",
+      "title": "",
+      "titleMy": "ပြန်လည်ဆုံတွေ့ခြင်း",
+      "readerTitle": "",
+      "readerTitleMy": "ပြန်လည်ဆုံတွေ့ခြင်း",
+      "comingSoon": true,
+      "file": "./chapters/chapter-02.7.txt"
+    }
+    
 
   ]
 }
