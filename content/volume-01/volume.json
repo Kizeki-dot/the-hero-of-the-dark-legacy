@@ -64,11 +64,11 @@
     {
       "number": "3",
       "title": "",
-      "titleMy": "ပြန်လည်ဆုံတွေ့ခြင်း (မကြာမီလာမည်)",
+      "titleMy": "ပြန်လည်ဆုံတွေ့ခြင်း",
       "readerTitle": "",
-      "readerTitleMy": "ပြန်လည်ဆုံတွေ့ခြင်း",
-      "comingSoon": true,
-      "file": "./chapters/chapter-02.7.txt"
+      "readerTitleMy": "ပြန်လည်ဆုံတွေ့ခြင်း (အိမ်ပြန်လမ်း)",
+      "comingSoon": false,
+      "file": "./chapters/chapter-003.txt"
     }
     
 
