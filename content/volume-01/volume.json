@@ -69,8 +69,27 @@
       "readerTitleMy": "ပြန်လည်ဆုံတွေ့ခြင်း (အိမ်ပြန်လမ်း)",
       "comingSoon": false,
       "file": "./chapters/chapter-003.txt"
+    },
+
+    {
+      "number": "3",
+      "title": "",
+      "titleMy": "ပြန်လည်ဆုံတွေ့ခြင်း (အပိုင်း ၂)",
+      "readerTitle": "",
+      "readerTitleMy": "ပြန်လည်ဆုံတွေ့ခြင်း (အိမ်ပြန်လမ်း အပိုင်း-၂)",
+      "comingSoon": false,
+      "file": "./chapters/chapter-003.1.txt"
+    },
+
+    {
+      "number": "4",
+      "title": "",
+      "titleMy": "",
+      "readerTitle": "",
+      "readerTitleMy": "",
+      "comingSoon": true,
+      "file": "./chapters/chapter-003.1.txt"
     }
-    
 
   ]
 }

@@ -23,6 +23,31 @@ const AUDIO_ROOT = "../audio/volume-01/";
 let chapters = [];
 let currentIndex = -1;
 let currentScene = null;
+const RECENT_READING_KEY = "novelRecentReading";
+
+function saveRecentReading() {
+  if (currentIndex < 0 || !chapters[currentIndex]) return;
+
+  const chapter = chapters[currentIndex];
+
+  localStorage.setItem(RECENT_READING_KEY, JSON.stringify({
+    volume: "volume-01",
+    index: currentIndex,
+    language: getLanguage(),
+    number: chapter.number,
+    titleMy: chapter.readerTitleMy || chapter.titleMy || "",
+    titleEn: chapter.readerTitle || chapter.titleEn || chapter.title || "",
+    url: window.location.pathname
+  }));
+}
+
+function getRecentReading() {
+  try {
+    return JSON.parse(localStorage.getItem(RECENT_READING_KEY));
+  } catch {
+    return null;
+  }
+}
 let lastSrc = "";
 let muted = false;
 let manualPausedScene = null;
@@ -197,6 +222,8 @@ async function loadChapter(index, scroll = true) {
   errorBox.hidden = true;
   currentIndex = index;
   const chapter = chapters[index];
+
+  saveRecentReading();
   chapterSelect.value = String(index);
   const file = chapterFileForLanguage(chapter);
   if (chapter.comingSoon && getLanguage() === "my") {
@@ -417,7 +444,11 @@ window.addEventListener("wheel", checkMusicAfterBrowserPositionRestore, { passiv
 
 window.addEventListener("scroll", () => {
   if (!ticking) {
-    requestAnimationFrame(() => { updateScene(); ticking = false; });
+    requestAnimationFrame(() => {
+      updateScene();
+      saveRecentReading();
+      ticking = false;
+    });
     ticking = true;
   }
 }, { passive: true });
@@ -544,3 +575,59 @@ function setupChapterSelectorLabelsOnly() {
 }
 
 loadStory();
+
+function showChapterIndexes() {
+  const old = document.getElementById("developerChapterIndex");
+  if (old) old.remove();
+
+  const panel = document.createElement("div");
+  panel.id = "developerChapterIndex";
+
+  panel.innerHTML = `
+    <div class="developer-index-header">
+      <strong>Chapter Index</strong>
+      <button id="developerIndexClose">×</button>
+    </div>
+
+    <div class="developer-index-list">
+      ${chapters.map((chapter, index) => `
+        <div class="developer-index-item">
+          <div class="developer-index-number">
+            ${index}
+          </div>
+
+          <div class="developer-index-info">
+            <div class="developer-index-title">
+              ${escapeHtml(
+                chapter.titleMy ||
+                chapter.readerTitleMy ||
+                chapter.title ||
+                "Untitled"
+              )}
+            </div>
+
+            <div class="developer-index-meta">
+              Array index: <strong>${index}</strong>
+              &nbsp; • &nbsp;
+              URL chapter: <strong>${index + 1}</strong>
+              &nbsp; • &nbsp;
+              number: <strong>${chapter.number ?? ""}</strong>
+            </div>
+
+            <div class="developer-index-file">
+              ${escapeHtml(chapter.file || "")}
+            </div>
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  document.body.appendChild(panel);
+
+  document.getElementById("developerIndexClose").onclick = () => {
+    panel.remove();
+  };
+}
+
+window.showChapterIndexes = showChapterIndexes;

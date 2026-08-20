@@ -15,3 +15,5 @@
 The wind moved through the trees as he continued walking.
 
 [[/music]]
+
+showChapterIndexes() paste it in browser console for knowing index array. inside chapter pages.

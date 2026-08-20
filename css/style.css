@@ -8,7 +8,7 @@ button{font:inherit}
 .brand{font-weight:800;letter-spacing:.14em;font-size:.85rem}
 .site-header nav{display:flex;gap:24px;color:var(--muted);font-size:.9rem}
 .menu-btn{display:none;background:none;border:0;color:var(--text);font-size:1.4rem}
-.hero{max-width:var(--max);margin:auto;padding:80px 24px 100px;display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center}
+.hero{max-width:var(--max);margin:auto;padding:80px 24px 50px;display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center}
 .book-cover,.mini-cover{background:linear-gradient(145deg,#272d3b,#0f1219);border:1px solid var(--line);box-shadow:0 25px 60px #0008}
 .book-cover{aspect-ratio:2/3;border-radius:12px;display:grid;place-items:center}
 .cover-placeholder,.mini-cover{display:grid;place-items:center;text-align:center;font-weight:900;letter-spacing:.18em;color:#d9c9ff}
@@ -235,4 +235,421 @@ code{font-size:.85em;color:var(--accent)}
   min-height:66px;
   display:flex;
   align-items:center;
+}
+.continue-reading-section {
+  padding: 0px 24px;
+}
+
+.continue-reading-card{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--surface);
+}
+
+.continue-reading-card h3{
+  margin:.35em 0 .2em;
+}
+
+.continue-reading-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.continue-reading-card .secondary-btn{
+  flex-shrink:0;
+  margin-top:0;
+}
+
+@media(max-width:680px){
+  .continue-reading-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .continue-reading-card .secondary-btn{
+    width:100%;
+  }
+}
+
+.new-chapter-card{
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--surface);
+}
+
+.new-chapter-card h2{
+  margin:.3em 0 .35em;
+}
+
+.new-chapter-card p:not(.eyebrow){
+  color:var(--muted);
+  margin:0;
+}
+
+.new-chapter-card .secondary-btn{
+  margin-top:20px;
+}
+
+/* Developer-only chapter index viewer */
+#developerChapterIndex{
+  position:fixed;
+  inset:20px;
+  z-index:999999;
+  overflow:auto;
+  padding:24px;
+  background:#111827;
+  color:#fff;
+  border:2px solid #c9a7ff;
+  border-radius:18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  font-family:Inter,system-ui,sans-serif;
+}
+
+.developer-index-header{
+  position:sticky;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:18px;
+  margin-bottom:14px;
+  background:#111827;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  font-size:22px;
+}
+
+#developerIndexClose{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:10px;
+  background:rgba(255,255,255,.1);
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.developer-index-item{
+  display:flex;
+  gap:18px;
+  padding:18px 14px;
+  margin-bottom:10px;
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+}
+
+.developer-index-number{
+  flex:0 0 70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  font-weight:800;
+  color:#c9a7ff;
+}
+
+.developer-index-info{
+  min-width:0;
+}
+
+.developer-index-title{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.developer-index-meta{
+  font-size:14px;
+  color:rgba(255,255,255,.75);
+}
+
+.developer-index-meta strong{
+  color:#c9a7ff;
+}
+
+.developer-index-file{
+  margin-top:6px;
+  font-size:13px;
+  color:rgba(255,255,255,.45);
+  word-break:break-all;
+}
+/* ================================
+   LATEST ANNOUNCEMENTS
+   ================================ */
+
+.new-chapter-section{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+.new-chapter-card{
+  position:relative;
+  padding:12px 16px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  overflow:hidden;
+}
+
+/* Individual announcement */
+
+.announcement-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:42px;
+  animation:announcementFloat 4s ease-in-out infinite;
+}
+
+.announcement-item + .announcement-item{
+  margin-top:10px;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+}
+
+.announcement-item:nth-child(2){
+  animation-delay:.7s;
+}
+
+.announcement-item:nth-child(3){
+  animation-delay:1.4s;
+}
+
+/* Small label */
+
+.announcement-item .eyebrow{
+  margin:0;
+  white-space:nowrap;
+  font-size:.65rem;
+}
+
+/* Title */
+
+.announcement-item h2{
+  flex:1;
+  margin:0;
+  font-size:.95rem;
+  line-height:1.3;
+}
+
+/* Description */
+
+.announcement-description{
+  margin:0!important;
+  color:var(--muted);
+  font-size:.78rem;
+  white-space:nowrap;
+}
+
+/* Read button */
+
+.announcement-read{
+  flex-shrink:0;
+  color:var(--accent);
+  font-size:.8rem;
+  font-weight:700;
+}
+
+.announcement-read:hover{
+  text-decoration:underline;
+}
+
+
+/* ================================
+   SUBTLE FLOATING ANIMATION
+   ================================ */
+
+@keyframes announcementFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-2px);
+  }
+
+}
+
+
+/* ================================
+   BORDER PARTICLE / SPARKLE EFFECT
+   ================================ */
+
+.announcement-item::before,
+.announcement-item::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  z-index:0;
+  opacity:0;
+}
+
+
+.announcement-item::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius:12px;
+  pointer-events:none;
+
+  background:
+    radial-gradient(circle at 8% 0%, rgba(201,167,255,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 100%, rgba(255,209,102,.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 67% 0%, rgba(139,233,253,.9) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 100%, rgba(255,143,171,.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 100% 35%, rgba(201,167,255,.8) 0 2px, transparent 3px),
+    radial-gradient(circle at 0% 70%, rgba(139,233,253,.8) 0 2px, transparent 3px);
+
+  opacity:.35;
+  animation:announcementSparkle 2.8s ease-in-out infinite;
+}
+
+@keyframes announcementSparkle{
+
+  0%,100%{
+    opacity:.25;
+    transform:scale(.99);
+  }
+
+  50%{
+    opacity:1;
+    transform:scale(1.01);
+  }
+
+}
+
+
+/* Soft moving shine */
+
+.announcement-item::after{
+  inset:0;
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(201,167,255,.08),
+      transparent
+    );
+
+  transform:translateX(-100%);
+
+  animation:announcementShimmer 4s ease-in-out infinite;
+}
+
+
+/* Border glow */
+
+@keyframes announcementBorderGlow{
+
+  0%,100%{
+    opacity:.25;
+  }
+
+  50%{
+    opacity:1;
+  }
+
+}
+
+
+/* Slow shine moving across the announcement */
+
+@keyframes announcementShimmer{
+
+  0%,55%{
+    opacity:0;
+    transform:translateX(-100%);
+  }
+
+  70%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateX(100%);
+  }
+
+}
+
+
+/* Reduced motion */
+
+@media(prefers-reduced-motion:reduce){
+
+  .announcement-item,
+  .announcement-item::before,
+  .announcement-item::after{
+    animation:none;
+  }
+
+}
+
+/* Announcement border sparkles */
+
+.new-chapter-card{
+  position:relative;
+  isolation:isolate;
+}
+
+.new-chapter-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:15px;
+  pointer-events:none;
+  z-index:-1;
+
+  background:
+    radial-gradient(circle at 8% 0%, #c9a7ff 0 2px, transparent 3px),
+    radial-gradient(circle at 35% 100%, #ffd166 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 0%, #8be9fd 0 2px, transparent 3px),
+    radial-gradient(circle at 95% 45%, #ff8fab 0 2px, transparent 3px),
+    radial-gradient(circle at 65% 100%, #c9a7ff 0 2px, transparent 3px),
+    radial-gradient(circle at 3% 65%, #8be9fd 0 2px, transparent 3px);
+
+  animation:announcementSparkles 2.8s ease-in-out infinite;
+}
+
+@keyframes announcementSparkles{
+
+  0%,100%{
+    opacity:.25;
+    filter:brightness(.8);
+  }
+
+  25%{
+    opacity:.9;
+    filter:brightness(1.4);
+  }
+
+  50%{
+    opacity:.35;
+    filter:brightness(.9);
+  }
+
+  75%{
+    opacity:1;
+    filter:brightness(1.5);
+  }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .new-chapter-card::before{
+    animation:none;
+    opacity:.5;
+  }
+
 }

@@ -45,7 +45,9 @@ const I18N = {
     noChapters: "No chapters were found in content/volume-01/volume.json.",
     localServer: "If you opened the HTML directly from your computer, use a local server or GitHub Pages. Browsers block local file requests for security reasons.",
     englishComingSoon: "The English version of this chapter is coming soon.",
-    versionComingSoon: "This language version is not available yet."
+    versionComingSoon: "This language version is not available yet.",
+    continueReading: "Continue Reading",
+    eyebrowContinueReading: "CONTINUE READING"
   },
   my: {
     language: "English",
@@ -93,7 +95,9 @@ const I18N = {
     noChapters: "content/volume-01/volume.json တွင် အခန်းများ မတွေ့ပါ။",
     localServer: "ကွန်ပျူတာမှ HTML ဖိုင်ကို တိုက်ရိုက်ဖွင့်ထားပါက local server သို့မဟုတ် GitHub Pages ကို အသုံးပြုပါ။ လုံခြုံရေးအရ browser များသည် local file request များကို ပိတ်ထားနိုင်ပါသည်။",
     englishComingSoon: "ဤအခန်း၏ အင်္ဂလိပ်ဘာသာမူ မကြာမီ ထည့်သွင်းပေးပါမည်။",
-    versionComingSoon: "ဤဘာသာစကားမူကို မရရှိသေးပါ။"
+    versionComingSoon: "ဤဘာသာစကားမူကို မရရှိသေးပါ။",
+    continueReading: "ဆက်လက်ဖတ်ရှုပါ",
+    eyebrowContinueReading: "ဆက်လက်ဖတ်ရှုရန်"
   }
 };
 

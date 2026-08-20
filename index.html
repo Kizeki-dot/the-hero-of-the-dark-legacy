@@ -34,6 +34,20 @@
   </header>
 
   <main>
+    <section id="newChapterAnnouncement" class="section new-chapter-section" hidden>
+  <div class="new-chapter-card">
+    <p class="eyebrow" id="newChapterLabel">✦ NEW EPISODE</p>
+
+    <h2 id="newChapterTitle"></h2>
+
+    <p id="newChapterDescription"></p>
+
+    <a class="secondary-btn" id="newChapterButton" href="#">
+      Read Chapter→
+    </a>
+  </div>
+</section>
+
     <section class="hero">
       <div class="book-cover">
         <img src="./assests/1.png" alt="My Novel book cover">
@@ -45,6 +59,27 @@
         <a class="primary-btn" href="#volumes" data-i18n="readNow">Read Now</a>
       </div>
     </section>
+
+    <section id="continueReading" class="section continue-reading-section" hidden>
+      <div class="section-heading">
+        <p data-i18n="eyebrowContinueReading" class="eyebrow">CONTINUE READING</p>
+        <h2 data-i18n="continueReading">Continue Reading</h2>
+      </div>
+    
+      <div class="continue-reading-card">
+        <div>
+          <span data-i18n="volumeOne" class="volume-number">VOLUME 01</span>
+          <h3 id="continueChapterTitle"></h3>
+          <p id="continueChapterSubtitle"></p>
+        </div>
+      
+        <a class="secondary-btn" id="continueReadingBtn" href="#">
+          Continue →
+        </a>
+      </div>
+    </section>
+
+    
 
     <section id="volumes" class="section">
       <div class="section-heading">
