@@ -22,7 +22,7 @@ Kael ၏ အသံထဲတွင် မှော်စွမ်းအားအ�
 
 Eliana က သူ့စကားကို နားထောင်ပြီး နူးညံ့စွာ ပြုံးလိုက်သည်။
 
-[[music: Magic.mp3 | volume=0.10 | start=35 | title=John Michael Howell - Magic ]]
+[[music: Magic.mp3 | volume=0.50 | start=35 | title=John Michael Howell - Magic ]]
 
 “ဒါဆို Kael…”
 
@@ -142,7 +142,7 @@ Kael သည်ရုတ်တရက်ဘာပြောရမှန်းပင
 
 
 
-[[music: Disney Movie.mp3 | volume=0.10 | start=0 | title=John Michael Howell - Magic ]]
+[[music: Disney Movie.mp3 | volume=0.50 | start=0 | title=John Michael Howell - Magic ]]
 
 သူမ၏ ခြေလှမ်းတစ်လှမ်းချင်းစီတိုင်းတွင်—
 
