@@ -74,6 +74,8 @@ code{font-size:.85em;color:var(--accent)}
 .audio-info span{font-size:.75rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .audio-player button{border:0;background:none;color:var(--text);cursor:pointer}
 #volume{width:90px;accent-color:var(--accent)}
+#audioSeek{ transform:translateY(1.5px); width:140px; accent-color:var(--accent); -webkit-transform:translateY(1.5px); -moz-transform:translateY(1.5px); -ms-transform:translateY(1.5px); -o-transform:translateY(1.5px);
+}
 
 @media(max-width:680px){
  .site-header nav{display:none}
@@ -90,6 +92,7 @@ code{font-size:.85em;color:var(--accent)}
  .audio-player{gap:8px}
  .audio-info{font-size:.9rem}
  #volume{width:65px}
+ #audioSeek{width:90px;}
 }
 
 @media(prefers-reduced-motion:reduce){

@@ -5,6 +5,9 @@ const muteBtn = document.getElementById("muteBtn");
 const pauseBtn = document.getElementById("pauseBtn");
 const status = document.getElementById("audioStatus");
 const audioTitle = document.getElementById("audioTitle");
+const audioSeek = document.getElementById("audioSeek");
+const audioCurrentTime = document.getElementById("audioCurrentTime");
+const audioDuration = document.getElementById("audioDuration");
 const chapterSelect = document.getElementById("chapterSelect");
 const chapterControls = document.getElementById("chapterControls");
 const prevChapter = document.getElementById("prevChapter");
@@ -84,6 +87,7 @@ function parseMusicMarker(line) {
   return {
     audio: meta.first,
     volume: Number.isFinite(Number(meta.volume)) ? Math.max(0, Math.min(1, Number(meta.volume))) : 0.55,
+    start: meta.start || "0",
     title: meta.title || t("sceneMusic")
   };
 }
@@ -145,7 +149,7 @@ function renderBlock(block, chapter) {
 
   const music = block.music;
   const audioPath = encodeURI(`${AUDIO_ROOT}chapter-${String(chapter.number).padStart(3, "0")}/${music.audio}`);
-  return `<div class="music-scene" data-audio="${escapeHtml(audioPath)}" data-volume="${music.volume}" data-title="${escapeHtml(music.title)}"><div class="text-block">${text}</div></div>`;
+  return `<div class="music-scene" data-audio="${escapeHtml(audioPath)}" data-volume="${music.volume}" data-start="${escapeHtml(music.start)}" data-title="${escapeHtml(music.title)}"><div class="text-block">${text}</div></div>`;
 }
 
 function updateUrl() {
@@ -309,6 +313,36 @@ function setupChapterSelector() {
 
 function showPlayer() { player.classList.add("visible"); }
 function hidePlayer() { player.classList.remove("visible"); }
+function formatAudioTime(seconds) {
+  if (!Number.isFinite(seconds)) return "0:00";
+
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return `${minutes}:${String(secs).padStart(2, "0")}`;
+}
+
+audio.addEventListener("loadedmetadata", () => {
+  if (!Number.isFinite(audio.duration)) return;
+
+  audioSeek.max = audio.duration;
+  audioSeek.value = audio.currentTime;
+
+  audioDuration.textContent = formatAudioTime(audio.duration);
+});
+
+audio.addEventListener("timeupdate", () => {
+  if (!Number.isFinite(audio.duration)) return;
+
+  audioSeek.value = audio.currentTime;
+  audioCurrentTime.textContent = formatAudioTime(audio.currentTime);
+});
+
+audioSeek.addEventListener("input", () => {
+  if (!Number.isFinite(audio.duration)) return;
+
+  audio.currentTime = Number(audioSeek.value);
+});
 
 function playScene(scene) {
   const src = scene.dataset.audio;
@@ -318,7 +352,7 @@ function playScene(scene) {
   if (src !== lastSrc) {
     audio.src = src;
     lastSrc = src;
-    audio.currentTime = 0;
+    audio.currentTime = Number(scene.dataset.start || 0);
     manualPausedScene = null;
   }
 
@@ -353,14 +387,24 @@ function pauseCurrentScene() {
 function resetAudioForChapter() {
   audio.pause();
   audio.currentTime = 0;
+
   currentScene = null;
   manualPausedScene = null;
   lastSrc = "";
+
   audio.removeAttribute("src");
   audio.load();
+
+  audioSeek.value = 0;
+  audioSeek.max = 0;
+
+  audioCurrentTime.textContent = "0:00";
+  audioDuration.textContent = "0:00";
+
   status.textContent = t("noMusic");
   pauseBtn.textContent = "▶";
   pauseBtn.setAttribute("aria-label", t("playMusic"));
+
   hidePlayer();
 }
 

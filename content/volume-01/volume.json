@@ -87,8 +87,38 @@
       "titleMy": "မှော်သစ်တောကြားကနှလုံးသားတစ်စုံ",
       "readerTitle": "",
       "readerTitleMy": "",
-      "comingSoon": true,
-      "file": "./chapters/chapter-003.1.txt"
+      "comingSoon": false,
+      "file": "./chapters/chapter-004.txt"
+    },
+
+    {
+      "number": "4",
+      "title": "",
+      "titleMy": "မှော်သစ်တောကြားကနှလုံးသားတစ်စုံ (အပိုင်း ၂)",
+      "readerTitle": "",
+      "readerTitleMy": "",
+      "comingSoon": false,
+      "file": "./chapters/chapter-004.1.txt"
+    },
+
+    {
+      "number": "4",
+      "title": "",
+      "titleMy": "မှော်သစ်တောကြားကနှလုံးသားတစ်စုံ (အပိုင်း ၃)",
+      "readerTitle": "",
+      "readerTitleMy": "",
+      "comingSoon": false,
+      "file": "./chapters/chapter-004.2.txt"
+    },
+
+    {
+      "number": "4",
+      "title": "",
+      "titleMy": "မှော်သစ်တောကြားကနှလုံးသားတစ်စုံ (အပိုင်း ၄)",
+      "readerTitle": "",
+      "readerTitleMy": "",
+      "comingSoon": false,
+      "file": "./chapters/chapter-004.3.txt"
     }
 
   ]

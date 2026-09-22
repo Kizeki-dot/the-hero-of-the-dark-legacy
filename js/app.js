@@ -5,13 +5,13 @@ const LATEST_ANNOUNCEMENTS = [
     labelMy: "✦ အခန်းသစ်",
     labelEn: "✦ NEW",
 
-    titleMy: "ပြန်လည်ဆုံတွေ့ခြင်း",
+    titleMy: "ငွေသစ်တောတွင် ထိုနေ့က ပန်းကလေးများပွင့်ခဲ့သည်",
     titleEn: "",
 
-    descriptionMy: "အခန်း ၂",
-    descriptionEn: "Chapter 2",
+    descriptionMy: "အခန်း ၁",
+    descriptionEn: "Chapter 1",
 
-    chapterIndex: 6
+    chapterIndex: 8
   },
 
 {
@@ -19,13 +19,41 @@ const LATEST_ANNOUNCEMENTS = [
     labelMy: "✦ အခန်းသစ်",
     labelEn: "✦ NEW",
 
-    titleMy: "ပြန်လည်ဆုံတွေ့ခြင်း (အပိုင်း ၂)",
+    titleMy: "ငွေသစ်တောတွင် ထိုနေ့က ပန်းကလေးများပွင့်ခဲ့သည် (အပိုင်း ၂)",
     titleEn: "",
 
     descriptionMy: "အခန်း ၂",
     descriptionEn: "Chapter 2",
 
-    chapterIndex: 6
+    chapterIndex: 9
+  },
+
+  {
+    enabled: true,
+    labelMy: "✦ အခန်းသစ်",
+    labelEn: "✦ NEW",
+
+    titleMy: "ငွေသစ်တောတွင် ထိုနေ့က ပန်းကလေးများပွင့်ခဲ့သည် (အပိုင်း ၃)",
+    titleEn: "",
+
+    descriptionMy: "အခန်း ၃",
+    descriptionEn: "Chapter 3",
+
+    chapterIndex: 10
+  },
+
+  {
+    enabled: true,
+    labelMy: "✦ အခန်းသစ်",
+    labelEn: "✦ NEW",
+
+    titleMy: "ငွေသစ်တောတွင် ထိုနေ့က ပန်းကလေးများပွင့်ခဲ့သည် (အပိုင်း ၄)",
+    titleEn: "",
+
+    descriptionMy: "အခန်း ၄",
+    descriptionEn: "Chapter 4",
+
+    chapterIndex: 11
   },
 
   {
