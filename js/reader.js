@@ -266,11 +266,12 @@ async function loadChapter(index, scroll = true) {
     updateUrl();
     footer.hidden = false;
     if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+    
     requestAnimationFrame(() => {
-      updateScene();
       updateMusicNoticeForChapter();
       checkMusicAfterBrowserPositionRestore();
     });
+
   } catch (error) {
     if (getLanguage() === "en" && error.message === t("englishComingSoon")) {
       chapterContainer.innerHTML = `<p class="chapter-label">${escapeHtml(t("chapter").toUpperCase())} ${formatChapterNumber(chapter.number)}</p><h2>${escapeHtml(displayTitle)}</h2><div class="chapter-loading">${escapeHtml(t("englishComingSoon"))}</div>`;
@@ -467,22 +468,32 @@ function updateScene() {
 }
 
 let ticking = false;
-/* Refresh music check after browser scroll restoration */
-window.addEventListener("pageshow", () => {
-  requestAnimationFrame(() => {
-    updateScene();
-    setTimeout(() => updateScene(), 120);
-  });
-});
 
-/* Desktop refresh / mouse-wheel music-position check */
+/* Refresh music check after browser scroll restoration */
 function checkMusicAfterBrowserPositionRestore() {
+  requestAnimationFrame(() => updateScene());
+
   requestAnimationFrame(() => {
-    updateScene();
     requestAnimationFrame(() => updateScene());
-    setTimeout(() => updateScene(), 150);
+  });
+
+  // Recheck after the browser restores the scroll position
+  // and the chapter layout has settled.
+  [80, 200, 450, 800, 1300].forEach(delay => {
+    setTimeout(() => updateScene(), delay);
   });
 }
+
+window.addEventListener(
+  "pageshow",
+  checkMusicAfterBrowserPositionRestore
+);
+
+window.addEventListener(
+  "load",
+  checkMusicAfterBrowserPositionRestore
+);
+
 
 window.addEventListener("wheel", checkMusicAfterBrowserPositionRestore, { passive: true });
 
@@ -569,8 +580,54 @@ dismiss.addEventListener("click", () => {
   hideMusicNotice();
 });
 
-document.addEventListener("visibilitychange", () => { if (document.hidden) pauseCurrentScene(); });
-window.addEventListener("pagehide", () => { audio.pause(); });
+
+/* Recheck music when returning to the reader tab */
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    pauseCurrentScene();
+    return;
+  }
+
+  checkMusicAfterBrowserPositionRestore();
+});
+
+/* Recheck after direct entry, refresh, or browser history navigation */
+window.addEventListener("pageshow", () => {
+  checkMusicAfterBrowserPositionRestore();
+});
+
+/* Browsers may block autoplay until the reader interacts with the page.
+   Resume the detected scene on the first user interaction if needed. */
+let musicResumeInteractionAdded = false;
+
+function resumeMusicAfterInteraction() {
+  if (!currentScene || manualPausedScene === currentScene) return;
+
+  if (audio.paused) {
+    playScene(currentScene);
+  }
+}
+
+if (!musicResumeInteractionAdded) {
+  musicResumeInteractionAdded = true;
+
+  document.addEventListener(
+    "pointerdown",
+    resumeMusicAfterInteraction,
+    { passive: true }
+  );
+
+  document.addEventListener(
+    "keydown",
+    resumeMusicAfterInteraction
+  );
+}
+
+/* Stop audio when leaving the reader page */
+window.addEventListener("pagehide", () => {
+  audio.pause();
+});
+
 
 async function loadStory() {
   try {
