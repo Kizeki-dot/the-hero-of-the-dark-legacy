@@ -57,17 +57,17 @@ const LATEST_ANNOUNCEMENTS = [
   },
 
   {
-    enabled: false,
-    labelMy: "✦ အထူးအပိုင်း",
+    enabled: true,
+    labelMy: "✦ အထူးအပိုင်း ကြားဖြတ်အပိုင်းငယ် အခန်း(၂)",
     labelEn: "✦ SPECIAL",
 
-    titleMy: "အမှောင်ထဲမှ အသံ",
+    titleMy: "ဒဏ္ဍာရီတစ်ခုကို ပုံဖော်ပေးသော ဘဝငယ်လေးများ",
     titleEn: "A Voice in the Darkness",
 
     descriptionMy: "အထူးအပိုင်း",
     descriptionEn: "Special Episode",
 
-    chapterIndex: 7
+    chapterIndex: 12
   }
 ];
 
