@@ -1,0 +1,19 @@
+
+{
+  "id": "./",
+  "name": "Hero of the Dark Legacy",
+  "short_name": "Dark Legacy",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone", 
+  "background_color": "#111827",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "./assests/1.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
